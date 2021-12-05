@@ -168,5 +168,11 @@ String? validatePassword(String? formPassword) {
     return 'Champ Password manquant';
     
   }
+  RegExp checkLetter = RegExp(r".*[A-Za-z].*");
+
+  if (!checkLetter.hasMatch(formPassword)) {
+    return 'Veuillez indiquer un Password avec au moins une lettre.';
+  } 
+  
   return null;
 }
